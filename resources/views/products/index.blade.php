@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h2>Listado de Productos</h2>
-                        <a href="" class="btn btn-success btn-sm ms-auto">
+                        <a href="{{ route('products.create' )}}" class="btn btn-success btn-sm ms-auto">
                             Nuevo Producto
                         </a>                                                                      
                     </div>

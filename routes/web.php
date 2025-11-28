@@ -19,6 +19,12 @@ Route::get('/', function () {
 */
 
 
+// ruta para listar productos
 Route::get('/products', function(){
     return view("products.index");
 });
+
+// ruta para crear un nuevo productos
+Route::get('/products/create', function(){
+    return view('products.create');
+})->name('products.create');
