@@ -23,3 +23,4 @@ yarn-error.log
 /bootstrap/cache/*
 !/bootstrap/cache/.gitignore
 .env
+.env.example
