@@ -31,7 +31,7 @@
                                 <button type="submit" class="btn btn-primary btn-sm">
                                     Guardar
                                 </button>
-                                <a href="" class="btn btn-danger btn-sm">
+                                <a href="{{ route('products.index') }}" class="btn btn-danger btn-sm">
                                     Cancelar
                                 </a>
                             </div>                            
