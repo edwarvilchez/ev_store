@@ -45,7 +45,7 @@ Route::post('/products/save', function(Request $request){
     $newProduct->save();
 
 // retornamos a la ruta por defecto
-    return redirect()->route('products.index')->with('info', 'Producto creado exitosamente');
+    return redirect()->route('products.index')->with('info', 'Producto Creado exitosamente');
 })->name('products.save');
 
 // ruta para eliminar un producto por su id
@@ -73,5 +73,5 @@ Route::put('/products/{id}', function(Request $request, $id){
     $product->price = $request->input('price');
     $product->stock = $request->input('stock');
     $product->save();
-    return redirect()->route('products.index')->with('info', 'Producto Actualizado satisfactoriamente');
+    return redirect()->route('products.index')->with('info', 'Producto Actualizado exitosamente');
 })->name('products.update');
