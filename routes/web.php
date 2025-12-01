@@ -24,7 +24,8 @@ Route::get('/', function () {
 
 // ruta para listar productos
 Route::get('/products', function(){
-    return view("products.index");
+    $products = Product::orderBy('created_at', 'desc')->get();
+    return view("products.index", compact('products'));
 })->name('products.index');
 
 // ruta para crear un nuevo productos
@@ -44,5 +45,5 @@ Route::post('/products/save', function(Request $request){
     $newProduct->save();
 
     // retornamos a la ruta por defecto
-    return redirect()->route('products.index');
+    return redirect()->route('products.index')->with('info', 'Producto creado exitosamente');
 })->name('products.save');

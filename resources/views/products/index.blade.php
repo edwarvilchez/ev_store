@@ -20,7 +20,31 @@
                         </a>                                                                      
                     </div>
                     <div class="card-body">
-                        ...
+                <!--mostramos el mensaje de que el producto se creó exitosamente, usando mensajes flash-->
+                    @if(session('info'))
+                        <div class="alert alert-success">
+                            {{session('info') }}
+                        </div>                        
+                    @endif
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </thead>
+                            <tbody>
+                                @foreach($products as $product)
+                                <tr>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->stock }}</td>                                
+                                </tr> 
+                                @endforeach                               
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

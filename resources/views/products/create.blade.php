@@ -21,7 +21,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="name">Nombre</label>                                    
-                                <input type="text" class="form-control" name="name">                                
+                                <input type="text" class="form-control" name="name" required>                                
                             </div>
                             <div class="form-group">
                                 <label for="description">Descripción</label>                                    
@@ -29,11 +29,11 @@
                             </div>
                              <div class="form-group">
                                 <label for="price">Precio</label>                                    
-                                <input type="number" class="form-control" name="price">                                
+                                <input type="number" class="form-control" name="price" required>                                
                             </div>
                             <div class="form-group">
                                 <label for="stock">Stock</label>                                    
-                                <input type="number" class="form-control" name="stock">                                
+                                <input type="number" class="form-control" name="stock" required>                                
                             </div>
                             <br>
                             <div class="btn-group" role="group">
