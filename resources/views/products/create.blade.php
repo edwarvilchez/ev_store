@@ -2,7 +2,7 @@
 @extends('layouts.main')
 @section('contenido')
 <title>Crear Producto</title>
-    <br>
+
     <div class="container">
         <diw class="row">
             <div class="col-md-12">
