@@ -55,3 +55,23 @@ Route::delete('products/{id}', function($id){
     $product->delete();
     return redirect()->route('products.index')->with('info', 'Producto Eliminado exitosamente');
 })->name('products.destroy');
+
+// ruta para editar el producto
+Route::get('products/{id}/edit', function($id){
+    $product = Product::findOrFail($id);
+    return view('products.edit', compact('product'));
+})->name('products.edit');
+
+
+// ruta para actualizar el producto
+Route::put('/products/{id}', function(Request $request, $id){
+    //return $request->all();
+    $product = Product::findOrFail($id);
+    //return $product;
+    $product->name = $request->input('name');
+    $product->description = $request->input('description');
+    $product->price = $request->input('price');
+    $product->stock = $request->input('stock');
+    $product->save();
+    return redirect()->route('products.index')->with('info', 'Producto Actualizado satisfactoriamente');
+})->name('products.update');
