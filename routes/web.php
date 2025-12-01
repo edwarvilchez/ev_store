@@ -37,7 +37,9 @@ Route::post('/products/save', function(Request $request){
     # return $request->all();
     # variables para guardar el registro en BD
     $newProduct = new Product;
+    $newProduct->name = $request->input('name');
     $newProduct->description = $request->input('description');
     $newProduct->price = $request->input('price');
+    $newProduct->stock = $request->input('stock');
     $newProduct->save();
 })->name('products.save');
