@@ -44,6 +44,14 @@ Route::post('/products/save', function(Request $request){
     $newProduct->stock = $request->input('stock');
     $newProduct->save();
 
-    // retornamos a la ruta por defecto
+// retornamos a la ruta por defecto
     return redirect()->route('products.index')->with('info', 'Producto creado exitosamente');
 })->name('products.save');
+
+// ruta para eliminar un producto por su id
+Route::delete('products/{id}', function($id){
+    $product = Product::findOrFail($id);
+    // return $product;
+    $product->delete();
+    return redirect()->route('products.index')->with('info', 'Producto Eliminado exitosamente');
+})->name('products.destroy');

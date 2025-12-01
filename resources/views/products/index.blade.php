@@ -40,7 +40,16 @@
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->price }}</td>
-                                    <td>{{ $product->stock }}</td>                                
+                                    <td>{{ $product->stock }}</td>  
+                                    <td>
+                                        <form id="delete-{{ $product->id }}" action="{{ route('products.destroy', $product->id) }}" method="POST" style="display: inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </td>                             
                                 </tr> 
                                 @endforeach                               
                             </tbody>
