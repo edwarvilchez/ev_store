@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\Product;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +31,13 @@ Route::get('/products', function(){
 Route::get('/products/create', function(){
     return view('products.create');
 })->name('products.create');
+
+// ruta para guardar los datos del producto en la BD
+Route::post('/products/save', function(Request $request){
+    # return $request->all();
+    # variables para guardar el registro en BD
+    $newProduct = new Product;
+    $newProduct->description = $request->input('description');
+    $newProduct->price = $request->input('price');
+    $newProduct->save();
+})->name('products.save');

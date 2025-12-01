@@ -17,7 +17,12 @@
                         <h2>Crear Producto</h2>                                                                                            
                     </div>
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{ route('products.save') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label for="name">Nombre</label>                                    
+                                <input type="text" class="form-control" name="name">                                
+                            </div>
                             <div class="form-group">
                                 <label for="description">Descripción</label>                                    
                                 <input type="text" class="form-control" name="description">                                
@@ -25,6 +30,10 @@
                              <div class="form-group">
                                 <label for="price">Precio</label>                                    
                                 <input type="number" class="form-control" name="price">                                
+                            </div>
+                            <div class="form-group">
+                                <label for="stock">Stock</label>                                    
+                                <input type="number" class="form-control" name="stock">                                
                             </div>
                             <br>
                             <div class="btn-group" role="group">
