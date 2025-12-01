@@ -42,4 +42,7 @@ Route::post('/products/save', function(Request $request){
     $newProduct->price = $request->input('price');
     $newProduct->stock = $request->input('stock');
     $newProduct->save();
+
+    // retornamos a la ruta por defecto
+    return redirect()->route('products.index');
 })->name('products.save');
